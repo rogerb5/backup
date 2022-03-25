@@ -1,0 +1,112 @@
+body {
+    background: #06458f;
+}
+
+/* Navigation Bar BUTTON */
+nav {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+nav::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    transition: transform 400ms ease-in;
+    z-index: 1;
+}
+
+/* After Clicking */
+nav::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+        top: 0;
+        left: 0;
+    background: white;
+    border-radius: 50%;
+    transition: transform 400ms ease;
+}
+
+nav:hover:after {
+    transform: scale(1.2);
+}
+
+/* Navigation Bar Button */
+nav button {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 140;
+}
+
+/* Circular Menu Open Effect */
+.menu-open nav:before {
+    transform: scale(20);
+}
+
+/* The Opened Menu */
+.menu {
+    position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: whitesmoke;
+    z-index: 4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery {
+    position: relative;
+}
+
+.picture {
+    position: absolute;
+        top: 0;
+        left: 0;
+    min-height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Right Side of Menu */
+.list {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.ul-links {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu .list li {
+    font-size: 2rem;
+}
+
+.menu .list li a {
+    transition: opacity 300ms ease;
+    width: fit-content;
+}
+
+
+.menu .list li a:hover {
+    opacity: 0.4;
+}

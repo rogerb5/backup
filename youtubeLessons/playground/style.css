@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div {
+    margin-top: 20px;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    background-color: silver;
+    border: 2px solid royalblue;
+}

@@ -1,0 +1,39 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #FDFDFD;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bx-wp {
+    position: absolute;
+        top: 50%;
+        left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Image */
+.bx {
+    position: relative;
+    transform: scale(1.2);
+}
+
+.shadow {
+    position: absolute;
+        top: 50%;
+        left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform ease 300ms;
+    z-index: 1;
+    background-color: royalblue;
+}

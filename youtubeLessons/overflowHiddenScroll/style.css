@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+img:hover {
+  cursor:zoom-in;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background-color: #171717;
+    padding: 2em;
+}
+
+.bx-wp {
+    overflow: hidden;
+    will-change: transform;
+    border: 2px solid gold;
+}
+
+.bx-pic {
+    will-change: transform;
+    position: relative;
+    transform: scale(1.2);
+}
+
+@media all and (max-width: 600px) {
+}
