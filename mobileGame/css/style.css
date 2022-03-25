@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    font-family: system-ui;
+}
+
+/* Root Variables */
+:root {
+    --main-padding: 1em;
+    --btn-padding: 0.4em;
+    --light-mode-main: whitesmoke;
+    --light-mode-text: #333;
+    --light-mode-num-bg: rgb(98, 195, 228);
+    --light-mode-correct: green;
+    --light-mode-incorrect: firebrick;
+
+    --dark-mode-main: #171717;
+    --dark-mode-text: whitesmoke;
+}
+
+/* DEFAULT STYLING */
+body {
+    background-color: var(--light-mode-main);
+    color: var(--light-mode-text);
+}
+
+button {
+    padding: var(--btn-padding);
+}
+
+p {
+    margin-top: 0.5rem;
+}
+
+/* HEADER STYLING */
+.header {
+    display: flex;
+    background-color: antiquewhite;
+    align-items: center;
+    justify-content: space-around;
+    padding: var(--main-padding);
+}
+
+/* Game Description Section */ 
+.game-section-exit-div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.game-section-exit:hover {
+    cursor: pointer;
+}
+
+.game-section-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+        left: 0;
+        top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s all;
+    opacity: 0;
+}
+
+.game-section-overlay.active {
+    opacity: 1;
+}
+
+.game-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-top: 5px solid var(--light-mode-num-bg);
+    background-color: var(--light-mode-main);
+    padding: var(--main-padding);
+    min-height: 400px;
+    max-width: 80%;
+}
+
+.game-picture {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-picture div:nth-child(even) {
+    background-color: transparent;
+    color: #333;
+}
+
+.sample-box {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: var(--light-mode-num-bg);
+}
+
+.sample-bx5 {
+    background-color: var(--light-mode-correct);
+}
+
+.sample-bx5-wg {
+    background-color: var(--light-mode-incorrect);
+}
