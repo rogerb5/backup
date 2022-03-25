@@ -1,0 +1,319 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.7;
+    letter-spacing: 0.07rem;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+    font-family: system-ui;
+}
+
+/* General settings */
+:root {
+    --main-c: #171717;
+    --overlay-intro: #171717;
+    --overlay-intro-t: seashell;
+    --main-text-color: seashell;
+    --h1-fs: 2.8rem;
+    --h2-fs: 2.4rem;
+    --h3-fs: 2rem;
+    --h4-fs: 1.8rem;
+    --h5-fs: 1.6rem;
+    --p-fs: 1.2rem;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: var(--main-c);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+html {
+    background-color: var(--main-c);
+}
+
+/* Fixed main layer */
+main {
+    position: fixed;
+        top: 0;
+        left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: var(--overlay-intro);
+}
+
+/* In total there are 4 sections */
+section {
+    position: relative;
+    height: 100vh;
+    background: var(--main-c);
+}
+
+/* Scroll Container */
+.scroll-container {
+    will-change: transform;
+}
+
+/**** Fixed DOMContentLoaded overlay intro */
+.overlay-intro {
+    position: fixed;
+        top: 0;
+        left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--overlay-intro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+.overlay-intro h1 {
+    color: var(--overlay-intro-t);
+    font-size: var(--h1-fs);
+    transition: 1s;
+}
+
+/* Fixed Navigation Bar Settings */
+.nav-bar {
+    position: fixed;
+        left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 0 5% 0 5%;
+    background:transparent;
+    transition: 0.3s;
+}
+
+.nav-bar.toggle {
+    background: #2e2e2e;
+}
+
+.nav-bar h5 {
+    font-size: var(--h5-fs);
+    color: var(--main-text-color);
+}
+
+.nav-bar ul {
+    color:var(--main-c);
+    /*width: 300px;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: var(--main-text-color);
+    font-size: 25px;
+}
+
+.nav-link2 {
+    opacity: 0;
+    color: var(--main-text-color);
+}
+
+
+/* Relative Scrollable Sections **********/
+/* S header */
+.s-header {
+    color: var(--main-text-color);
+    margin: 20px;
+    position: relative;
+        top: 20%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.s-header h1 {
+    font-size: var(--h1-fs);
+}
+
+.s-header h2 {
+    font-size: var(--h2-fs);
+}
+
+/* S about */
+.s2 {
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+.s2.active {
+    opacity: 0;
+}
+
+.s-about {
+    color: var(--main-text-color);
+    margin: 35px;
+    text-align: center;
+    position: relative;
+        top: 30%;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.s-about h2 {
+    font-size: var(--h2-fs);
+}
+
+.about-t, .about-p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-p {
+    padding: 0.6em;
+    font-size: var(--p-fs);
+}
+
+/* PROJECTS */
+.sticky {
+    position: relative;
+    height: 220vh;
+}
+
+.sticky2 {
+    position: relative;
+}
+  
+.sticky2,.overlay-p {
+    position: absolute;
+       top: 0;
+       left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+.stick {
+    font-size: var(--h1-fs);
+    color:var(--main-text-color);
+    mix-blend-mode: difference;
+    position: sticky;
+    position: -webkit-sticky;
+        top: 45vh;
+    text-align: center;
+    padding: 50px;
+    z-index: 2;
+    letter-spacing: 5px;
+    will-change: transform;
+    background-color: transparent;
+}
+  
+img {
+    position: relative;
+     width: 30vw;
+    filter: grayscale(100%);
+    z-index: 4;
+    height: 230px;
+    will-change: transform;
+    background: var(--main-c);
+    mix-blend-mode: difference;
+}
+ 
+.project-grid {
+    position: absolute;
+        top: 5%;
+        left: 5%;
+    height: 90%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 80vh);
+    gap: 5px;
+}
+  
+.project-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+/* Footer Section */
+.s-footer {
+    position: relative;
+        top: 30%;
+        margin: 13px;
+    height: 30vh;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+}
+
+#c {
+    position: relative;
+    top: 30%;
+    color: var(--main-text-color);
+    font-size: var(--h3-fs);
+}
+
+#mail {
+    position: relative;
+    top: 90%;
+    font-size: var(--p-fs);
+    color: var(--main-text-color);
+}
+
+@media screen and (max-width: 600px) {
+    img {
+        margin: 30px;
+        height: 170px;
+        width: 250px;
+    }
+
+    .s-about,.project-grid,.s-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-link {
+        color: #333;
+        font-weight: bold;
+        border: 2px solid #333;
+        border-radius: 100%;
+        width: 51px;
+        text-align: center;
+        height: 50px;
+        position: relative;
+        bottom: 25%;
+        mix-blend-mode: difference;
+        background-color: var(--main-text-color);
+    }
+
+    .nav-bar {
+        position: fixed;
+        width: 100%;
+        justify-content: flex-end;
+        bottom: 0;
+    }
+}
