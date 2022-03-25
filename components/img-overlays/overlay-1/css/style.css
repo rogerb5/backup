@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+}
+
+/* Card Style */
+.card {
+    margin: .3em;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+/*Caption Style*/
+.caption {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Change height to 35% for less overlaycover*/
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0; /* Keeps overlay attached to containers bottom */
+    left: 0;
+    color: #fff;
+    transform: translateY(100%); /*Pushes it down 100% containers height */
+    transition: all 0.4s;
+}
+
+.card:hover .caption {
+    transform: translateY(0%); /* Brings overlay back up */
+}

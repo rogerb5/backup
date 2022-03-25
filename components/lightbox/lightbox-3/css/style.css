@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full gallery */
+.gallery {
+    background: #171717;
+}
+
+/* Gallery Container */
+.gallery-container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: .8em;
+  column-gap: .8em;
+}
+
+/* Gallery Images */
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 6px rgb(0, 0, 0, 0.5);
+    cursor: zoom-in;
+}
+
+/* Lightbox Modal Overlay */
+.lightbox-modal {
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+        top: 0;
+        left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.9);
+    transition: 500ms;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Add and remove css class directly from previous css defined class */
+.lightbox-modal.active {
+    pointer-events: all;
+    transform: scale(1);
+    z-index: 2;
+    opacity: 1;
+}
+
+.lightbox-img {
+    width: 60%;
+    height: 400px;
+    object-fit: cover;
+    transition: all 500ms;
+}
+
+button:focus {
+    outline: none;
+}
+
+.btn {
+    background-color: #fff;
+    color: #333;
+    width: 30px;
+    height: 30px;
+    transition: 0.3s ease-in;
+    border: none;
+    position: absolute;
+    opacity: 1;
+}
+
+.btn.inactive {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.close {
+    top: 10vh;
+    right: 10%;
+}
+
+#left {
+    top: 50vh;
+    left: 10%;
+}
+
+#right {
+    top: 50vh;
+    right: 10%;
+}
+
+.close:hover {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+}
+
+@media screen and (max-width: 60em){
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lightbox-img {
+        width: 350px;
+        height: 375px;
+    }
+}
